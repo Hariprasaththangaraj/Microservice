@@ -37,7 +37,7 @@ public class PaymentServiceImpl implements PaymentService {
         WapperEntiry wapperEntiry = new WapperEntiry();
         Optional<Payment> getPaymentData = getPayment(id);
 
-        OrderServiceEntity orderServiceEntity = restTemplate.getForObject("http://localhost:8080/order/" +
+        OrderServiceEntity orderServiceEntity = restTemplate.getForObject("http://ORDER-SERVICE/order/" +
                 getPaymentData.get().getPaymentId(), OrderServiceEntity.class);
 
         wapperEntiry.setOrderService(orderServiceEntity);
